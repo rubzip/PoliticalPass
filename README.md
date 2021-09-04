@@ -19,9 +19,9 @@ The most important files are:
 - [ ] Limpiar los datos
 - [ ] Crear diccionario de palabras
 - [ ] Aumentar el dataset (más cuentas y más twits)
-- [ ] Subir como otro proyeco a github la version buena sin las APIs
+- [x] Subir como otro proyeco a github la version buena sin las APIs
 - [ ] wordcloud
-- [ ] ordenar por carpetas
+- [x] ordenar por carpetas
 - [ ] añadir mas graficas, balanceo de datos
 
 ## Requirements
@@ -94,7 +94,3 @@ https://towardsdatascience.com/email-spam-detection-1-2-b0e06a5c0472
 https://likegeeks.com/es/tutorial-de-nlp-con-python-nltk/#Implementaciones_del_NLP
 RNN
 
-## Requeriments
- * python3
- * tweetpy
- * NLKT
