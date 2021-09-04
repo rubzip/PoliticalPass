@@ -20,7 +20,7 @@ def import_tweets(at, number_tweets=300):
 		for tweet in raw_tweets:
 			text_tweet = tweet.full_text
 			if not("RT @" in text_tweet):   #We exculde RTs
-				tweets.append(text_tweet)
+				tweets.append(text_tweet.lower())
 
 		return(tweets)
 
