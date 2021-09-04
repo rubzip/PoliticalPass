@@ -16,11 +16,8 @@ The most important files are:
 
 This project uses the following Python libraries
 
+* `Tweepy` : To download tweets.
 * `spaCy` : Used to tokenize the article into sentences and words.
-* `PRAW` : Makes the use of the Reddit API very easy.
-* `Requests` : To perform HTTP `get` requests to the articles urls.
-* `BeautifulSoup` : Used for extracting the article text.
-* `html5lib` : This parser got better compatibility when used with `BeautifulSoup`.
 * `tldextract` : Used to extract the domain from an url.
 * `wordcloud` : Used to create word clouds with the article text.
 
@@ -32,36 +29,40 @@ For `Spanish` you can run this one:
 
 For other languages please check the following link: https://spacy.io/usage/models
 
-## Reddit Bot
+## About data
 
-The bot is simple in nature, it uses the `PRAW` library which is very straightforward to use. The bot polls a subreddit every 10 minutes to get its latest submissions.
+I have selected some relevant political profiles in Spain (politicians, tweetstars, youtubers, ...). 
 
-It first detects if the submission hasn't already been processed and then checks if the submission url is in the whitelist. This whitelist is currently curated by myself.
+Nowadays left-wing and right-wing concepts are senseless since we have 2 variables in [political spectrum](https://en.wikipedia.org/wiki/Political_spectrum), but it was the simplest way to label data.
 
-If the post and its url passes both checks then a process of web scraping is applied to the url, this is where things start getting interesting.
 
-Before replying to the original submission it checks the percentage of the reduction achieved, if it's too low or too high it skips it and moves to the next submission.
+## Mining
 
-## Web Scraper
-
-Currently in the whitelist there are already more than 300 different websites of news articles and blogs. Creating specialized web scrapers for each one is simply not feasible.
-
-The second best thing to do is to make the scraper as accurate as possible.
-
-We start the web scraper on the usual way, with the `Requests` and `BeautifulSoup` libraries.
+Using `Tweepy` we downnload the `number_tweets` last tweets from `at` user:
 
 ```python
-with requests.get(article_url) as response:
-    
-    if response.encoding == "ISO-8859-1":
-        response.encoding = "utf-8"
+def import_tweets(at, number_tweets=300):
+#https://stackoverflow.com/questions/30359801/how-to-successfully-get-all-the-tweets-for-one-user-with-tweepy
+	#API config:
+	auth = tweepy.OAuthHandler(consumer_key, consumer_secret)
+	auth.set_access_token(access_token_key, access_token_secret)
 
-    html_source = response.text
+	api = tweepy.API(auth)
 
-for item in ["</p>", "</blockquote>", "</div>", "</h2>", "</h3>"]:
-    html_source = html_source.replace(item, item+"\n")
+	#tweets are stored in a list
+	tweets = []
 
-soup = BeautifulSoup(html_source, "html5lib")
+	try:
+		raw_tweets = tweepy.Cursor(api.user_timeline,id=at[1:], tweet_mode="extended").items(number_tweets)
+		for tweet in raw_tweets:
+			text_tweet = tweet.full_text
+			if not("RT @" in text_tweet):   #We exculde RTs
+				tweets.append(text_tweet)
+
+		return(tweets)
+
+	except:
+		return(0)
 ```
 
 
