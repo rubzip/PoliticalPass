@@ -8,7 +8,7 @@ The most important files are:
 
 * `datos.csv` : Info about all users analayzed.
 
-* `data_mining.ipynb` : Download the `number_tweets` last tweets from each user and are stored in `raw_tweets.csv`.  
+* `data_mining.ipynb` : Download the `number_tweets` last tweets from each user. Tweets are stored in `raw_tweets.csv`.  
 
 * `data_cleaning.ipynb` : 
 
