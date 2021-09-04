@@ -12,6 +12,18 @@ The most important files are:
 
 * `data_cleaning.ipynb` : 
 
+
+## TAREAS
+ * Añadir un .gitnore https://medium.com/black-tech-diva/hide-your-api-keys-7635e181a06c
+ * Implemetar manera de minar data de manera paralela
+ * Limpiar los datos
+ * Crear diccionario de palabras
+ * Aumentar el dataset (más cuentas y más twits)
+ * Subir como otro proyeco a github la version buena sin las APIs
+ * wordcloud
+ * ordenar por carpetas
+ * añadir mas graficas, balanceo de datos
+
 ## Requirements
 
 This project uses the following Python libraries
@@ -30,9 +42,11 @@ For other languages please check the following link: https://spacy.io/usage/mode
 
 ## About data
 
-I have selected some relevant political profiles in Spain (politicians, tweetstars, youtubers, ...). 
+I have selected some relevant political profiles in Spain (politicians, tweetstars, youtubers, ...), labeled as 0 (rigthts) and 1 (leftist), then we have . 
 
-Nowadays left-wing and right-wing concepts are senseless since we have 2 variables in [political spectrum](https://en.wikipedia.org/wiki/Political_spectrum), but it was the simplest way to label data.
+### Problems
+...Nowadays left-wing and right-wing concepts are senseless since we have 2 variables in [political spectrum](https://en.wikipedia.org/wiki/Political_spectrum), but it was the simplest way to label data.
+...Another problem of the data is that we have a large amount of tweets from a small quantity of accounts, it could be problematic. For example: supose that we have a leftist huge fan of basketball and he is the unique person that tweets about basket, if we take   
 
 
 ## Mining
@@ -64,6 +78,11 @@ def import_tweets(at, number_tweets=300):
 		return(0)
 ```
 
+## Spacy or NLTK?
+
+Before I started this projet I never have listened about NLP. I decided to use Spacy beacuse in NLTK doesn't exist any lemmatizer in spanish. 
+
+## Cleaning
 
 
 
@@ -73,17 +92,6 @@ https://towardsdatascience.com/email-spam-detection-1-2-b0e06a5c0472
 
 https://likegeeks.com/es/tutorial-de-nlp-con-python-nltk/#Implementaciones_del_NLP
 RNN
-
-## TAREAS
- * Añadir un .gitnore https://medium.com/black-tech-diva/hide-your-api-keys-7635e181a06c
- * Implemetar manera de minar data de manera paralela
- * Limpiar los datos
- * Crear diccionario de palabras
- * Aumentar el dataset (más cuentas y más twits)
- * Subir como otro proyeco a github la version buena sin las APIs
- * wordcloud
- * ordenar por carpetas
- * añadir mas graficas, balanceo de datos
 
 ## Requeriments
  * python3
