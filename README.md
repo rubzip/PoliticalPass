@@ -17,8 +17,7 @@ The most important files are:
 This project uses the following Python libraries
 
 * `Tweepy` : To download tweets.
-* `spaCy` : Used to tokenize the article into sentences and words.
-* `tldextract` : Used to extract the domain from an url.
+* `spaCy` : Used to tokenize the article into sentences and words.<<<<<<<<<<<<<<<<
 * `wordcloud` : Used to create word clouds with the article text.
 
 After installing the `spaCy` library you must install a language model to be able to tokenize the article.
