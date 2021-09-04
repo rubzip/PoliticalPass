@@ -78,11 +78,14 @@ def import_tweets(at, number_tweets=300):
 		return(0)
 ```
 
-## Spacy or NLTK?
+
+## Cleaning
+
+### Spacy or NLTK?
 
 Before I started this projet I never have listened about NLP. I decided to use Spacy beacuse in NLTK doesn't exist any lemmatizer in spanish. 
 
-## Cleaning
+
 
 As I said I used Sapcy:
 
