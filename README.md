@@ -45,7 +45,7 @@ For other languages please check the following link: https://spacy.io/usage/mode
 I have selected some relevant political profiles in Spain (politicians, tweetstars, youtubers, ...), labeled as 0 (rigthts) and 1 (leftist), then we have . 
 
 ### Problems
- * Nowadays left-wing and right-wing concepts are senseless since we have 2 variables in [political spectrum](https://en.wikipedia.org/wiki/Political_spectrum), but it was the simplest way to label data.
+ * Nowadays left-wing and right-wing concepts are senseless since we have 2 variables in [political spectrum](https://en.wikipedia.org/wiki/Political_spectrum), but it was the simplest way to label data. For example I have clasified [Juan Ramón Rallo](https://es.wikipedia.org/wiki/Juan_Ramón_Rallo) (liberal) as rightist.
  * Another problem of data is that we have a large amount of tweets from a small quantity of accounts, it could be problematic. For example: supose that we have a leftist huge fan of basketball and he is the unique person that tweets about basket in dataset, if we evaluate in our model another basketaball fan or even a basketball player, possibly the result would be leftist.
 
 
