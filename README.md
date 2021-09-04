@@ -42,7 +42,7 @@ For other languages please check the following link: https://spacy.io/usage/mode
 
 ## About data
 
-I have selected some relevant political profiles in Spain (politicians, tweetstars, youtubers, ...), labeled as 0 (rigthts) and 1 (leftist), then we have . 
+I have selected some relevant political profiles in Spain (politicians, tweetstars, youtubers, ...), labeled as 0 (rigthts) and 1 (leftist), then I have downloaded the n last tweets from each user labeled based on who wrote it. 
 
 ### Problems
  * Nowadays left-wing and right-wing concepts are senseless since we have 2 variables in [political spectrum](https://en.wikipedia.org/wiki/Political_spectrum), but it was the simplest way to label data. For example I have clasified [Juan Ramón Rallo](https://es.wikipedia.org/wiki/Juan_Ramón_Rallo) (liberal) as rightist.
