@@ -13,23 +13,24 @@ The most important files are:
 * `data_cleaning.ipynb` : 
 
 
-## TAREAS
- * Añadir un .gitnore https://medium.com/black-tech-diva/hide-your-api-keys-7635e181a06c
- * Implemetar manera de minar data de manera paralela
- * Limpiar los datos
- * Crear diccionario de palabras
- * Aumentar el dataset (más cuentas y más twits)
- * Subir como otro proyeco a github la version buena sin las APIs
- * wordcloud
- * ordenar por carpetas
- * añadir mas graficas, balanceo de datos
+## TAREAS (Only for me)
+- [x] Añadir un .gitnore https://medium.com/black-tech-diva/hide-your-api-keys-7635e181a06c
+- [ ] Implemetar manera de minar data de manera paralela
+- [ ] Limpiar los datos
+- [ ] Crear diccionario de palabras
+- [ ] Aumentar el dataset (más cuentas y más twits)
+- [ ] Subir como otro proyeco a github la version buena sin las APIs
+- [ ] wordcloud
+- [ ] ordenar por carpetas
+- [ ] añadir mas graficas, balanceo de datos
 
 ## Requirements
 
 This project uses the following Python libraries
 
 * `Tweepy` : To download tweets.
-* `spaCy` : Used to tokenize the article into sentences and words.
+* `spaCy` : Used to tokenize words and lemmatize.
+* spcay...
 * `wordcloud` : Used to create word clouds with the article text.
 
 After installing the `spaCy` library you must install a language model to be able to tokenize the article.
@@ -84,7 +85,7 @@ Before I started this projet I never have listened about NLP. I decided to use S
 
 ## Cleaning
 
-
+As I said I used Sapcy:
 
 
 
