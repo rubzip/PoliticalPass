@@ -55,7 +55,6 @@ Using `Tweepy` we downnload the `number_tweets` last tweets from `at` user:
 
 ```python
 def import_tweets(at, number_tweets=300):
-#https://stackoverflow.com/questions/30359801/how-to-successfully-get-all-the-tweets-for-one-user-with-tweepy
 	#API config:
 	auth = tweepy.OAuthHandler(consumer_key, consumer_secret)
 	auth.set_access_token(access_token_key, access_token_secret)
