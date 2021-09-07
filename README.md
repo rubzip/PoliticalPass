@@ -1,6 +1,6 @@
 # PoliticalPass
 
-Deep Learning project. The objetive is to predict if a (spanish) twitter account is left-wing or right-wing based on most often tweetted words.
+Deep Learning project. The objetive is to predict if a (spanish) twitter account is left-wing or right-wing based on most often tweeted words.
 
 The most important files are:
 
@@ -16,16 +16,18 @@ The most important files are:
 
 * `transform_data.ipynb` : It takes the tokenized tweets from `data_cleaning.ipynb` and labels data aplying the dictionary `dictionary.json`. After runing this notebook, we have correctly formated our data as `X` (numpy array, variable lengths) and `y` (0 or 1). 
 
+* `model.ipynb` : Our model.
+
 ## TAREAS (Only for me)
 - [x] Añadir un .gitnore https://medium.com/black-tech-diva/hide-your-api-keys-7635e181a06c
 - [ ] Implemetar manera de minar data de manera paralela
-- [ ] Limpiar los datos
-- [ ] Crear diccionario de palabras
-- [ ] Aumentar el dataset (más cuentas y más twits)
+- [x] Limpiar los datos
+- [x] Crear diccionario de palabras
+- [x] Aumentar el dataset (más cuentas y más twits)
 - [x] Subir como otro proyeco a github la version buena sin las APIs
-- [ ] wordcloud
+- [x] wordcloud
 - [x] ordenar por carpetas
-- [ ] añadir mas graficas, balanceo de datos
+- [x] añadir mas graficas, balanceo de datos
 
 ## Requirements
 
@@ -95,6 +97,18 @@ I found some problems with spacy stopwords, resultind the most often words:
 
 Result of most often words (correctly cleaned):
 ![WordCloud](https://github.com/rubzip/PoliticalPass/blob/main/wordcloud.png)
+
+### Data Label
+
+I created a dictionary using the 2000 most often words, after that every exaple is labeled as X: a numpy array of variable length (minimum 3 words), every element in the array is a number between 0 and 1999. Y is 0. or 1. depending on the tweet is left-wing or not. 
+
+## Model
+
+The model implemented is a [Recursive Neural Network (RNN)](https://en.wikipedia.org/wiki/Recursive_neural_network).
+
+### Data Split
+
+I have applied one_hot_encoding . Using `model_selection` from `sklearn` I have splitted our 38423 examples as 80% training set and 20% test set.
 
 
 https://towardsdatascience.com/email-spam-detection-1-2-b0e06a5c0472
