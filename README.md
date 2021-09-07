@@ -90,6 +90,8 @@ def import_tweets(at, number_tweets=300):
 Before I started this projet I never have listened about NLP. I decided to use `Spacy` beacuse in NLTK doesn't exist any lemmatizer in spanish. 
 I loaded `'es_dep_news_trf'`, maybe a bad decision because is one of the most heavier files.
 
+### Data cleaning
+
 The process was easy, first of all tokenize, filter wordclouds and lemmatization.
 
 I found some problems with spacy stopwords, resulting the most often words:
@@ -108,7 +110,7 @@ for i in delete:
 Result of most often words (correctly cleaned):
 ![WordCloud](https://github.com/rubzip/PoliticalPass/blob/main/wordcloud.png)
 
-### Data Label
+### Data label
 
 I created a dictionary using the 2000 most often words, after that every exaple is labeled as X: a numpy array of variable length (minimum 3 words), every element in the array is a number between 0 and 1999. Y is 0. or 1. depending on the tweet is left-wing or not. 
 
@@ -116,7 +118,7 @@ I created a dictionary using the 2000 most often words, after that every exaple 
 
 The model implemented is a [Recursive Neural Network (RNN)](https://en.wikipedia.org/wiki/Recursive_neural_network).
 
-### Data Split
+### Data split
 
 I have applied one_hot_encoding . Using `model_selection` from `sklearn` I have splitted our 38423 examples as 80% training set and 20% test set.
 
