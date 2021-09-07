@@ -92,8 +92,18 @@ I loaded `'es_dep_news_trf'`, maybe a bad decision because is one of the most he
 
 The process was easy, first of all tokenize, filter wordclouds and lemmatization.
 
-I found some problems with spacy stopwords, resultind the most often words:
+I found some problems with spacy stopwords, resulting the most often words:
 ![WordCloud Bad](https://github.com/rubzip/PoliticalPass/blob/main/wordcloud_bad.png)
+I fitered:
+```python
+delete = {
+    'a', 'y', 'o', 'of', 'in', 'i', 'to', 'e', 'm', 'and', 'the'
+}
+
+dictionary_2 = dictionary
+for i in delete:
+    dictionary_2[i] = 0
+```
 
 Result of most often words (correctly cleaned):
 ![WordCloud](https://github.com/rubzip/PoliticalPass/blob/main/wordcloud.png)
