@@ -88,10 +88,10 @@ I loaded `'es_dep_news_trf'`, maybe a bad decision because is one of the most he
 The process was easy, first of all tokenize, filter wordclouds and lemmatization.
 
 I found some problems with spacy stopwords, resultind the most often words:
-[WordCloud Bad](https://github.com/rubzip/PoliticalPass/blob/main/wordcloud_bad.png)
+![WordCloud Bad](https://github.com/rubzip/PoliticalPass/blob/main/wordcloud_bad.png)
 
 Result of most often words (correctly cleaned):
-[WordCloud](https://github.com/rubzip/PoliticalPass/blob/main/wordcloud.png)
+![WordCloud](https://github.com/rubzip/PoliticalPass/blob/main/wordcloud.png)
 
 
 https://towardsdatascience.com/email-spam-detection-1-2-b0e06a5c0472
