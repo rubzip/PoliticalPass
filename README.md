@@ -82,12 +82,16 @@ def import_tweets(at, number_tweets=300):
 
 ### Spacy or NLTK?
 
-Before I started this projet I never have listened about NLP. I decided to use Spacy beacuse in NLTK doesn't exist any lemmatizer in spanish. 
+Before I started this projet I never have listened about NLP. I decided to use `Spacy` beacuse in NLTK doesn't exist any lemmatizer in spanish. 
+I loaded `'es_dep_news_trf'`, maybe a bad decision because is one of the most heavier files.
 
+The process was easy, first of all tokenize, filter wordclouds and lemmatization.
 
+I found some problems with spacy stopwords, resultind the most often words:
+[WordCloud Bad](https://github.com/rubzip/PoliticalPass/blob/main/wordcloud_bad.png)
 
-As I said I used Sapcy:
-
+Result of most often words (correctly cleaned):
+[WordCloud](https://github.com/rubzip/PoliticalPass/blob/main/wordcloud.png)
 
 
 https://towardsdatascience.com/email-spam-detection-1-2-b0e06a5c0472
