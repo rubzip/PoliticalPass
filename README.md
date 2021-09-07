@@ -10,8 +10,11 @@ The most important files are:
 
 * `data_mining.ipynb` : Download the `number_tweets` last tweets from each user. Tweets are stored in `raw_tweets.csv`.  
 
-* `data_cleaning.ipynb` : 
+* `data_cleaning.ipynb` : Tokenizes and cleans stopwords.
 
+* `create_dictionary.ipynb` : Creates a dictionary formed by the `n_max` most frequent words.
+
+* `transform_data.ipynb` : It takes the tokenized tweets from `data_cleaning.ipynb` and labels data aplying the dictionary `dictionary.json`. After runing this notebook, we have correctly formated our data as `X` (numpy array, variable lengths) and `y` (0 or 1). 
 
 ## TAREAS (Only for me)
 - [x] Añadir un .gitnore https://medium.com/black-tech-diva/hide-your-api-keys-7635e181a06c
