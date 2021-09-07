@@ -7,7 +7,7 @@ from config import consumer_key, consumer_secret, access_token_key, access_token
 def import_tweets(at, number_tweets=300):
 #https://stackoverflow.com/questions/30359801/how-to-successfully-get-all-the-tweets-for-one-user-with-tweepy
 	#API config:
-	auth = tweepy.OAuthHandler(consumer_key, consumer_secret)
+	auth = tweepy.OAuthHandler(consumer_key, consumer_secret, secure=True)
 	auth.set_access_token(access_token_key, access_token_secret)
 
 	api = tweepy.API(auth)
