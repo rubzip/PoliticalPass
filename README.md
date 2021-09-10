@@ -18,16 +18,9 @@ The most important files are:
 
 * `model.ipynb` : Our model.
 
-## TAREAS (Only for me)
-- [x] Añadir un .gitnore https://medium.com/black-tech-diva/hide-your-api-keys-7635e181a06c
-- [ ] Implemetar manera de minar data de manera paralela
-- [x] Limpiar los datos
-- [x] Crear diccionario de palabras
-- [x] Aumentar el dataset (más cuentas y más twits)
-- [x] Subir como otro proyeco a github la version buena sin las APIs
-- [x] wordcloud
-- [x] ordenar por carpetas
-- [x] añadir mas graficas, balanceo de datos
+## To do list (Only for me)
+- [ ] Implement recurrency on data mining.
+- [ ] Optimize 
 
 ## Requirements
 This project uses the following Python libraries
@@ -35,7 +28,7 @@ This project uses the following Python libraries
 * `Tweepy` : To download tweets.
 * `spaCy` : Used to tokenize words and lemmatize.
 * `es_dep_news_trf` : Spanish transformer pipeline.
-* `wordcloud` : Used to create word clouds with the article text.
+* `wordcloud` : Used to create word clouds from dictionaries.
 
 ## About data
 I have selected some relevant political profiles in Spain (`datos.csv`), labeled as 0 (rightist) and 1 (leftist), then I have downloaded the n last tweets from each user labeled based on who wrote it. 
