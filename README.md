@@ -30,21 +30,12 @@ The most important files are:
 - [x] añadir mas graficas, balanceo de datos
 
 ## Requirements
-
 This project uses the following Python libraries
 
 * `Tweepy` : To download tweets.
 * `spaCy` : Used to tokenize words and lemmatize.
-* spcay...
+* `es_dep_news_trf` : Spanish transformer pipeline.
 * `wordcloud` : Used to create word clouds with the article text.
-
-After installing the `spaCy` library you must install a language model to be able to tokenize the article.
-
-For `Spanish` you can run this one:
-
-`python -m spacy download es_core_news_sm`
-
-For other languages please check the following link: https://spacy.io/usage/models
 
 ## About data
 I have selected some relevant political profiles in Spain (`datos.csv`), labeled as 0 (rightist) and 1 (leftist), then I have downloaded the n last tweets from each user labeled based on who wrote it. 
@@ -55,7 +46,6 @@ I have selected some relevant political profiles in Spain (`datos.csv`), labeled
 
 
 ## Mining
-
 Using `Tweepy` we downnload the `number_tweets` last tweets from `at` user:
 
 ```python
@@ -86,12 +76,10 @@ def import_tweets(at, number_tweets=300):
 ## Cleaning
 
 ### Spacy or NLTK?
-
 Before I started this projet I never have listened about NLP. I decided to use `Spacy` beacuse in NLTK doesn't exist any lemmatizer in spanish. 
 I loaded `'es_dep_news_trf'`, maybe a bad decision because is one of the most heavier files.
 
 ### Data cleaning
-
 The process was easy, first of all tokenize, filter wordclouds and lemmatization.
 
 I found some problems with spacy stopwords, resulting the most often words:
@@ -111,15 +99,12 @@ Result of most often words (correctly cleaned):
 ![WordCloud](https://github.com/rubzip/PoliticalPass/blob/main/wordcloud.png)
 
 ### Data label
-
 I created a dictionary using the 2000 most often words, after that every exaple is labeled as X: a numpy array of variable length (minimum 3 words), every element in the array is a number between 0 and 1999. Y is 0. or 1. depending on the tweet is left-wing or not. 
 
 ## Model
-
 The model implemented is a [Recursive Neural Network (RNN)](https://en.wikipedia.org/wiki/Recursive_neural_network).
 
 ### Data split
-
 I have applied one_hot_encoding . Using `model_selection` from `sklearn` I have splitted our 38423 examples as 80% training set and 20% test set.
 
 
