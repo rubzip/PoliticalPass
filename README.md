@@ -20,7 +20,7 @@ The most important files are:
 
 ## To do list (Only for me)
 - [ ] Implement recurrency on data mining.
-- [ ] Optimize 
+- [ ] Optimize lemmatizing.
 
 ## Requirements
 This project uses the following Python libraries
