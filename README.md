@@ -21,6 +21,7 @@ The most important files are:
 ## To do list (Only for me)
 - [ ] Implement recurrency on data mining.
 - [ ] Optimize lemmatizing.
+- [ ] Build another list of twiter personalities to test the NN wuth a different datasent (almost 18 accounts).
 
 ## Requirements
 This project uses the following Python libraries
@@ -105,4 +106,3 @@ https://towardsdatascience.com/email-spam-detection-1-2-b0e06a5c0472
 
 https://likegeeks.com/es/tutorial-de-nlp-con-python-nltk/#Implementaciones_del_NLP
 RNN
-
