@@ -93,7 +93,7 @@ Result of most often words (correctly cleaned):
 ![WordCloud](https://github.com/rubzip/PoliticalPass/blob/main/wordcloud.png)
 
 ### Data label
-I created a dictionary using the 2000 most often words, after that every exaple is labeled as X: a numpy array of variable length (minimum 3 words), every element in the array is a number between 0 and 1999. Y is 0. or 1. depending on the tweet is left-wing or not. 
+I created a dictionary using the 2000 most often words, after that every exaple is labeled as X: a numpy array of variable length (minimum 3 words), every element in the array is a number between 0 and 1999. Y is 0. or 1. depending on the tweet belongs to a left-wing personality or not. 
 
 ## Model
 The model implemented is a [Recursive Neural Network (RNN)](https://en.wikipedia.org/wiki/Recursive_neural_network).
