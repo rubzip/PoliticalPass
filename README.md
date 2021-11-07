@@ -100,9 +100,3 @@ The model implemented is a [Recursive Neural Network (RNN)](https://en.wikipedia
 
 ### Data split
 I have applied one_hot_encoding . Using `model_selection` from `sklearn` I have splitted our 38423 examples as 80% training set and 20% test set.
-
-
-https://towardsdatascience.com/email-spam-detection-1-2-b0e06a5c0472
-
-https://likegeeks.com/es/tutorial-de-nlp-con-python-nltk/#Implementaciones_del_NLP
-RNN
