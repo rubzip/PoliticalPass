@@ -1,6 +1,6 @@
 # PoliticalPass
 
-Deep Learning project. The objetive is to predict if a (spanish) twitter account is left-wing or right-wing based on most often tweeted words.
+The main goal of this project is to apply all tecnologies wich I'm currently learning. The objetive is to predict if a (spanish) twitter account is left-wing or right-wing based on most often tweeted words.
 
 The most important files are:
 
@@ -8,7 +8,7 @@ The most important files are:
 
 * `datos.csv` : Info about all users analayzed.
 
-* `data_mining.ipynb` : Download the `number_tweets` last tweets from each user. Tweets are stored in `raw_tweets.csv`.  
+* `data_mining.ipynb` : Downloads the `number_tweets` last tweets from each user. Tweets are stored in `raw_tweets.csv`.  
 
 * `data_cleaning.ipynb` : Tokenizes and cleans stopwords.
 
@@ -16,14 +16,14 @@ The most important files are:
 
 * `transform_data.ipynb` : It takes the tokenized tweets from `data_cleaning.ipynb` and labels data aplying the dictionary `dictionary.json`. After runing this notebook, we have correctly formated our data as `X` (numpy array, variable lengths) and `y` (0 or 1). 
 
-* `model.ipynb` : Our model.
+* `model.ipynb` : 
 
 ## To do list (Only for me)
 - [ ] **Build the model.**
 - [ ] Implement recurrency on data mining.
 - [ ] Optimize lemmatizing.
 - [ ] Build another list of twiter personalities to test the NN wuth a different datasent (almost 18 accounts).
-- [ ] Program a web interface.
+- [ ] Program a web interface that scraps tweets and uses the model to predict the political ideology.
 
 ## Requirements
 This project uses the following Python libraries
@@ -34,11 +34,11 @@ This project uses the following Python libraries
 * `wordcloud` : Used to create word clouds from dictionaries.
 
 ## About data
-I have selected some relevant political profiles in Spain (`datos.csv`), labeled as 0 (rightist) and 1 (leftist), then I have downloaded the n last tweets from each user labeled based on who wrote it. 
+I have selected some relevant political profiles in Spain (`datos.csv`), labeled as 0 (rightist) and 1 (leftist), then I have downloaded the N last tweets from them. 
 
 ### Problems
  * Nowadays left-wing and right-wing concepts are senseless since we have 2 variables in [political spectrum](https://en.wikipedia.org/wiki/Political_spectrum), but it was the simplest way to label data. 
- * Another problem of data is that we have a large amount of tweets from a small quantity of accounts, this could be problematic.
+ * Another problem of data is that we have a large amount of tweets from a small quantity of accounts, this could be problematic (or not).
 
 
 ## Mining
@@ -69,13 +69,12 @@ def import_tweets(at, number_tweets=300):
 ```
 
 
-## Cleaning
+## Data Cleaning
 
 ### Spacy or NLTK?
-Before I started this projet I never have listened about NLP. I decided to use `Spacy` beacuse in NLTK doesn't exist any lemmatizer in spanish. 
-I loaded `'es_dep_news_trf'`, maybe a bad decision because is one of the most heavier files.
+Before I started this projet I never have listened about NLP. I decided to use `Spacy` beacuse in NLTK library doesn't exist any lemmatizer in spanish. Concretely I have loaded `'es_dep_news_trf'`.
 
-### Data cleaning
+### Word filtering
 The process was easy, first of all tokenize, filter wordclouds and lemmatization.
 
 I found some problems with spacy stopwords, resulting the most often words:
