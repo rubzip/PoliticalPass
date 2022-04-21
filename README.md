@@ -23,6 +23,7 @@ The most important files are:
 - [ ] Implement recurrency on data mining.
 - [ ] Optimize lemmatizing.
 - [ ] Build another list of twiter personalities to test the NN wuth a different datasent (almost 18 accounts).
+- [ ] Program a web interface.
 
 ## Requirements
 This project uses the following Python libraries
