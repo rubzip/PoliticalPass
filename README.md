@@ -19,6 +19,7 @@ The most important files are:
 * `model.ipynb` : Our model.
 
 ## To do list (Only for me)
+- [ ] **Build the model.**
 - [ ] Implement recurrency on data mining.
 - [ ] Optimize lemmatizing.
 - [ ] Build another list of twiter personalities to test the NN wuth a different datasent (almost 18 accounts).
