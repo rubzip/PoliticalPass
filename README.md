@@ -102,3 +102,4 @@ The model implemented is a [Recursive Neural Network (RNN)](https://en.wikipedia
 
 ### Data split
 I have applied one_hot_encoding . Using `model_selection` from `sklearn` I have splitted our 38423 examples as 80% training set and 20% test set.
+We should divide tweets by users. 
