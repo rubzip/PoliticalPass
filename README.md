@@ -24,6 +24,7 @@ The most important files are:
 - [ ] Optimize lemmatizing.
 - [ ] Build another list of twiter personalities to test the NN wuth a different datasent (almost 18 accounts).
 - [ ] Program a web interface that scraps tweets and uses the model to predict the political ideology.
+- [ ] Fix `.gitnore` to ignore the `config.py` file. 
 
 ## Requirements
 This project uses the following Python libraries
