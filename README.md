@@ -1,6 +1,6 @@
 # PoliticalPass
 
-The main goal of this project is to apply all tecnologies wich I'm currently learning. The objetive is to predict if a (spanish) twitter account is left-wing or right-wing based on most often tweeted words.
+The goal of this project is to apply all tecnologies wich I'm currently learning. The objetive is to predict if a (spanish) twitter account is left-wing or right-wing based on most often tweeted words.
 
 The most important files are:
 
