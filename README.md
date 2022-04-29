@@ -20,7 +20,7 @@ The most important files are:
 
 ## To do list (Only for me)
 - [ ] **Build the model.**
-- [ ] Implement recurrency on data mining.
+- [ ] Implement recurrency on data mining. Maybe using pyspark.
 - [ ] Optimize lemmatizing.
 - [ ] Build another list of twiter personalities to test the NN wuth a different datasent (almost 18 accounts).
 - [ ] Program a web interface that scraps tweets and uses the model to predict the political ideology.
