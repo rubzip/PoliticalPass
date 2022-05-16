@@ -19,8 +19,11 @@ The most important files are:
 * `model.ipynb` : 
 
 ## To do list (Only for me)
-- [ ] **Build the model.**
-- [ ] Implement recurrency on data mining. Maybe using pyspark.
+- [ ] **Build the model.** A good idea could train a pre-trained model as [BERT(https://www.tensorflow.org/text/tutorials/fine_tune_bert). 
+- [ ] Increment the dataset.
+- [ ] Divide dataset in Train/Dev/Test. Train and Dev must have the same data origin, Test must have different Twitter accounts
+- [ ] Orginize better the cleaninig directory, we have a lot of useless files.
+- [ ] Implement recurrency on data mining.
 - [ ] Optimize lemmatizing.
 - [ ] Build another list of twiter personalities to test the NN wuth a different datasent (almost 18 accounts).
 - [ ] Program a web interface that scraps tweets and uses the model to predict the political ideology.
