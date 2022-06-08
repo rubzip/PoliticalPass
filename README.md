@@ -44,7 +44,7 @@ I have selected some relevant political profiles in Spain (`datos.csv`), labeled
 ### Problems
  * Nowadays left-wing and right-wing concepts are senseless since we have 2 variables in [political spectrum](https://en.wikipedia.org/wiki/Political_spectrum), but it was the simplest way to label data. 
  * Another problem of data is that we have a large amount of tweets from a small quantity of accounts, this could be problematic (or not).
-
+ * This is not exactly a problem, but our dataset is completly localized in Spain, so model is going to predict left-wing and right-wing, related to Spanish topics.
 
 ## Mining
 Using `Tweepy` we downnload the `number_tweets` last tweets from `at` user:
