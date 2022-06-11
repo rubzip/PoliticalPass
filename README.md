@@ -1,6 +1,6 @@
 # PoliticalPass
 
-The goal of this project is to apply all tecnologies wich I'm currently learning. The objetive is to predict if a (spanish) twitter account is left-wing or right-wing based on most often tweeted words.
+The goal of this project is to predict if a (spanish) twitter personality is left-wing or right-wing based on his tweets.
 
 The most important files are:
 
@@ -28,6 +28,7 @@ The most important files are:
 - [ ] Build another list of twiter personalities to test the NN wuth a different datasent (almost 18 accounts).
 - [ ] Program a web interface that scraps tweets and uses the model to predict the political ideology.
 - [ ] Upload the trained model to hugging face.
+- [ ] Google Form.
 - [ ] Fix `.gitnore` to ignore the `config.py` file. 
 
 ## Requirements
@@ -37,12 +38,20 @@ This project uses the following Python libraries
 * `spaCy` : Used to tokenize words and lemmatize.
 * `es_dep_news_trf` : Spanish transformer pipeline.
 * `wordcloud` : Used to create word clouds from dictionaries.
+* `TensorFlow`
 
 ## About data
 I have selected some relevant political profiles in Spain (`datos.csv`), labeled as 0 (rightist) and 1 (leftist), then I have downloaded the N last tweets from them. 
 
-### Problems
- * Nowadays left-wing and right-wing concepts are senseless since we have 2 variables in [political spectrum](https://en.wikipedia.org/wiki/Political_spectrum), but it was the simplest way to label data. 
+### Twitter Profiles
+
+### Train/Set/Validation Split
+
+### Do you feel incomplete the dataset?
+It's really hard to make a dataset that represents correctly the political Spanish spectrum, I would appreciate any sugestions. If you want to help with the dataset, please make a pull request with `datos.csv` updated or fill this Google form().
+
+### Possible problems
+ * Nowadays left-wing and right-wing concepts are senseless since we have 2 variables in [political spectrum](https://en.wikipedia.org/wiki/The_Political_Compass), but it was the simplest way to label data. 
  * Another problem of data is that we have a large amount of tweets from a small quantity of accounts, this could be problematic (or not).
 
 
@@ -79,6 +88,13 @@ def import_tweets(at, number_tweets=300):
 ### Spacy or NLTK?
 Before I started this projet I never have listened about NLP. I decided to use `Spacy` beacuse in NLTK library doesn't exist any lemmatizer in spanish. Concretely I have loaded `'es_dep_news_trf'`.
 
+### Tokenization
+
+Result of most often words (correctly cleaned):
+![WordCloud](https://github.com/rubzip/PoliticalPass/blob/main/wordcloud.png)
+
+### Word Embedding
+
 ### Word filtering
 The process was easy, first of all tokenize, filter wordclouds and lemmatization.
 
@@ -95,8 +111,7 @@ for i in delete:
     dictionary_2[i] = 0
 ```
 
-Result of most often words (correctly cleaned):
-![WordCloud](https://github.com/rubzip/PoliticalPass/blob/main/wordcloud.png)
+
 
 ### Data label
 I created a dictionary using the 2000 most often words, after that every exaple is labeled as X: a numpy array of variable length (minimum 3 words), every element in the array is a number between 0 and 1999. Y is 0. or 1. depending on the tweet belongs to a left-wing personality or not. 
