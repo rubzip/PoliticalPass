@@ -1,12 +1,12 @@
 # PoliticalPass
 
-The goal of this project is to predict if a (spanish) twitter personality is left-wing or right-wing based on his tweets.
+The goal of this project is to predict if a (Spanish) twitter personality is left-wing or right-wing based on his tweets.
 
 The most important files are:
 
 * `config.py` : Python file that stores API keys.
 
-* `datos.csv` : Info about all users analayzed.
+* `datos.csv` : Info about all users analyzed.
 
 * `data_mining.ipynb` : Downloads the `number_tweets` last tweets from each user. Tweets are stored in `raw_tweets.csv`.  
 
@@ -14,7 +14,7 @@ The most important files are:
 
 * `create_dictionary.ipynb` : Creates a dictionary formed by the `n_max` most frequent words.
 
-* `transform_data.ipynb` : It takes the tokenized tweets from `data_cleaning.ipynb` and labels data aplying the dictionary `dictionary.json`. After runing this notebook, we have correctly formated our data as `X` (numpy array, variable lengths) and `y` (0 or 1). 
+* `transform_data.ipynb` : It takes the tokenized tweets from `data_cleaning.ipynb` and labels data applying the dictionary `dictionary.json`. After running this notebook, we have correctly formatted our data as `X` (numpy array, variable lengths) and `y` (0 or 1). 
 
 * `model.ipynb` : 
 
@@ -22,10 +22,10 @@ The most important files are:
 - [ ] **Build the model.** A good idea could train a pre-trained model as [BERT](https://www.tensorflow.org/text/tutorials/fine_tune_bert). 
 - [ ] Increment the dataset.
 - [ ] Divide dataset in Train/Dev/Test. Train and Dev must have the same data origin, Test must have different Twitter accounts
-- [ ] Orginize better the cleaninig directory, we have a lot of useless files.
+- [ ] Organize better the cleaning directory, we have a lot of useless files.
 - [ ] Implement recurrency on data mining.
 - [ ] Optimize lemmatizing.
-- [ ] Build another list of twiter personalities to test the NN wuth a different datasent (almost 18 accounts).
+- [ ] Build another list of Twitter personalities to test the NN with a different dataset (almost 18 accounts).
 - [ ] Program a web interface that scraps tweets and uses the model to predict the political ideology.
 - [ ] Upload the trained model to hugging face.
 - [ ] Google Form.
@@ -45,7 +45,8 @@ I have selected some relevant political profiles in Spain (`datos.csv`), labeled
 
 ### Twitter Profiles
 
-### Train/Set/Validation Split
+### Train/Test/Validation Split
+First of all I have randomly splitted our twitter accounts in 2 groups train/test - validation (80% - 20%). I have built the data dictionary and trained the model only with the twitter accounts that belong to the first group.
 
 ### Do you feel incomplete the dataset?
 It's really hard to make a dataset that represents correctly the political Spanish spectrum, I would appreciate any sugestions. If you want to help with the dataset, please make a pull request with `datos.csv` updated or fill this Google form().
@@ -96,11 +97,11 @@ Result of most often words (correctly cleaned):
 ### Word Embedding
 
 ### Word filtering
-The process was easy, first of all tokenize, filter wordclouds and lemmatization.
+The process was easy, first of all tokenize, filter wordclouds, and lemmatization.
 
 I found some problems with spacy stopwords, resulting the most often words:
 ![WordCloud Bad](https://github.com/rubzip/PoliticalPass/blob/main/wordcloud_bad.png)
-I fitered:
+I filtered:
 ```python
 delete = {
     'a', 'y', 'o', 'of', 'in', 'i', 'to', 'e', 'm', 'and', 'the'
@@ -114,11 +115,11 @@ for i in delete:
 
 
 ### Data label
-I created a dictionary using the 2000 most often words, after that every exaple is labeled as X: a numpy array of variable length (minimum 3 words), every element in the array is a number between 0 and 1999. Y is 0. or 1. depending on the tweet belongs to a left-wing personality or not. 
+I created a dictionary using the 2000 most often words, after that every example is labeled as X: a numpy array of variable length (minimum 3 words), and every element in the array is a number between 0 and 1999. Y is 0. or 1. depending on whether the tweet belongs to a left-wing personality or not. 
 
 ## Model
 The model implemented is a [Recursive Neural Network (RNN)](https://en.wikipedia.org/wiki/Recursive_neural_network).
 
 ### Data split
-I have applied one_hot_encoding . Using `model_selection` from `sklearn` I have splitted our 38423 examples as 80% training set and 20% test set.
-We should divide tweets by users. 
+I have applied one_hot_encoding. Using `model_selection` from `sklearn` I have split our 38423 examples as 80% training set and 20% test set.
+We should divide tweets by users.
