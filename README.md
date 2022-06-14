@@ -2,6 +2,21 @@
 
 The goal of this project is to predict if a (Spanish) twitter personality is left-wing or right-wing based on his tweets.
 
+
+## To do list (Only for me)
+- [ ] **Build the model.** A good idea could train a pre-trained model as [BERT](https://www.tensorflow.org/text/tutorials/fine_tune_bert). 
+- [ ] Increment the dataset.
+- [ ] Divide dataset in Train/Dev/Test. Train and Test must have the same data origin, Test must have different Twitter accounts
+- [ ] Create an embedding projector: https://projector.tensorflow.org/
+- [ ] Organize better the cleaning directory, we have a lot of useless files.
+- [ ] Implement recurrency on data mining.
+- [ ] Optimize lemmatizing.
+- [ ] Build another list of Twitter personalities to test the NN with a different dataset (almost 18 accounts).
+- [ ] Program a web interface that scraps tweets and uses the model to predict the political ideology.
+- [ ] Upload the trained model to hugging face.
+- [ ] Google Form.
+- [ ] Fix `.gitnore` to ignore the `config.py` file. 
+
 The most important files are:
 
 * `config.py` : Python file that stores API keys.
@@ -18,19 +33,6 @@ The most important files are:
 
 * `model.ipynb` : 
 
-## To do list (Only for me)
-- [ ] **Build the model.** A good idea could train a pre-trained model as [BERT](https://www.tensorflow.org/text/tutorials/fine_tune_bert). 
-- [ ] Increment the dataset.
-- [ ] Divide dataset in Train/Dev/Test. Train and Test must have the same data origin, Test must have different Twitter accounts
-- [ ] Create an embedding projector: https://projector.tensorflow.org/
-- [ ] Organize better the cleaning directory, we have a lot of useless files.
-- [ ] Implement recurrency on data mining.
-- [ ] Optimize lemmatizing.
-- [ ] Build another list of Twitter personalities to test the NN with a different dataset (almost 18 accounts).
-- [ ] Program a web interface that scraps tweets and uses the model to predict the political ideology.
-- [ ] Upload the trained model to hugging face.
-- [ ] Google Form.
-- [ ] Fix `.gitnore` to ignore the `config.py` file. 
 
 ## Requirements
 This project uses the following Python libraries
@@ -124,3 +126,6 @@ The model implemented is a [Recursive Neural Network (RNN)](https://en.wikipedia
 ### Data split
 I have applied one_hot_encoding. Using `model_selection` from `sklearn` I have split our 38423 examples as 80% training set and 20% test set.
 We should divide tweets by users.
+
+### Word Embedding Layer
+As we don't have a big ammount of data, we have used a pretrained embedding layer. ... 
