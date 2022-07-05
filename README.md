@@ -4,6 +4,7 @@ The goal of this project is to predict if a (Spanish) twitter personality is lef
 
 
 ## To do list (Only for me)
+- [ ] Remove all for loops, instead of that use functional programming.
 - [ ] **Build the model.** A good idea could train a pre-trained model as [BERT](https://www.tensorflow.org/text/tutorials/fine_tune_bert). 
 - [ ] Increment the dataset.
 - [ ] Divide dataset in Train/Dev/Test. Train and Test must have the same data origin, Test must have different Twitter accounts
