@@ -56,7 +56,7 @@ new_tweets = df_train['Tweet'].map(lambda x: lemmatize_tweet(nlp, x))
 ```python
 def lemmatize_tweet(nlp, tweet):
     #This function takes a tweet as a spacy.doc and returs the tweet tokenized
-    #and with all stopwords filtered as a str
+    
     #Some extra stopwords:
     delete = {
         'a', 'of', 'in', 'i', 'to', 'e', 'm', 'and', 'the'
