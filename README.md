@@ -56,7 +56,7 @@ First of all I have randomly splitted our twitter accounts in 2 groups train/tes
 It's really hard to make a dataset that represents correctly the political Spanish spectrum, I would appreciate any sugestions. If you want to help with the dataset, please make a pull request with `datos.csv` updated.
 
 ### Possible problems
- * Nowadays left-wing and right-wing concepts are senseless since we have 2 variables in [political spectrum](https://en.wikipedia.org/wiki/The_Political_Compass), but it was the simplest way to label data. 
+ * Nowadays left-wing and right-wing concepts are senseless since we have 2 variables (or maybe more) in the [political spectrum](https://en.wikipedia.org/wiki/The_Political_Compass), but it was the simplest way to label data. 
  * Another problem of data is that we have a large amount of tweets from a small quantity of accounts, this could be problematic (or not).
 
 
