@@ -5,13 +5,6 @@ The goal of this project is to predict if a (Spanish) twitter personality is lef
 ## About data
 I have selected some relevant political profiles in Spain (`ALL_twitter_accounts.csv`), labeled as 0 (rightist) and 1 (leftist), then I have downloaded the N last tweets from them. 
 
-|Nombre          |Ocupación       |Afiliación      |Izda|Twitter        |
-|----------------|----------------|----------------|----|---------------|
-|Unidas Podemos  |Partido Político|Podemos         |1   |@PODEMOS       |
-|PSOE            |Partido Político|PSOE            |1   |@PSOE          |
-|Izquierda Unida |Partido Político|IU              |1   |@IzquierdaUnida|
-|Anticapitalistas|Partido Político|Anticapitalistas|1   |@anticapi      |
-
 ### Twitter Profiles
 
 ### Train/Test/Validation Split
@@ -23,6 +16,30 @@ It's really hard to make a dataset that represents correctly the political Spani
 ### Possible problems
  * Nowadays left-wing and right-wing concepts are senseless since we have 2 variables (or maybe more) in the [political spectrum](https://en.wikipedia.org/wiki/The_Political_Compass), but it was the simplest way to label data. 
  * Another problem of data is that we have a large amount of tweets from a small quantity of accounts, this could be problematic (or not).
+
+
+## 1. Mining
+Using `Tweepy` and Twitter's API (`config.py`), I have downloaded the last 300 tweets from every user:
+
+```python
+def import_tweets(account, api, number_tweets=300):
+	# This function scraps the last 300 tweets from account
+	# and then returns all tweets excluding ReTweets
+	tweets = []
+	
+	try:
+		raw_tweets = tweepy.Cursor(api.user_timeline, id=account[1:], tweet_mode="extended").items(number_tweets)
+		for tweet in raw_tweets:
+			text_tweet = tweet.full_text
+			if not("RT @" in text_tweet):   #We exculde RTs
+				tweets.append(text_tweet.lower())
+		return tweets
+
+	except:
+		return 0
+```
+Resultin raw tweets were saved as a .csv in `./0_DATA/train-test_tweets.csv` and `./0_DATA/val_tweets.csv`
+
 
 
 ## To do list (Only for me)
@@ -67,33 +84,6 @@ This project uses the following Python libraries
 * `TensorFlow`
 
 
-
-## Mining
-Using `Tweepy` we downnload the `number_tweets` last tweets from `at` user:
-
-```python
-def import_tweets(at, number_tweets=300):
-	#API config:
-	auth = tweepy.OAuthHandler(consumer_key, consumer_secret)
-	auth.set_access_token(access_token_key, access_token_secret)
-
-	api = tweepy.API(auth)
-
-	#tweets are stored in a list
-	tweets = []
-
-	try:
-		raw_tweets = tweepy.Cursor(api.user_timeline,id=at[1:], tweet_mode="extended").items(number_tweets)
-		for tweet in raw_tweets:
-			text_tweet = tweet.full_text
-			if not("RT @" in text_tweet):   #We exculde RTs
-				tweets.append(text_tweet)
-
-		return(tweets)
-
-	except:
-		return(0)
-```
 
 
 ## Data Cleaning
