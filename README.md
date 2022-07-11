@@ -74,7 +74,7 @@ def lemmatize_tweet(nlp, tweet):
 
 ### Tokenization
 
-Taking the lemmatized tweets, I have created the tokenizer (5000 words and OutOfVocabularyToken = '<OOV>'):
+Taking the lemmatized tweets, I have created the tokenizer (5000 words):
 
 ```python
 # Creation and fitting of the Tokenizer:
