@@ -38,7 +38,68 @@ def import_tweets(account, api, number_tweets=300):
 	except:
 		return 0
 ```
-Resultin raw tweets were saved as a .csv in `./0_DATA/train-test_tweets.csv` and `./0_DATA/val_tweets.csv`
+Resulting raw tweets were stored as a .csv in `./0_DATA/train-test_tweets.csv` and `./0_DATA/val_tweets.csv`.
+
+## 2. Cleaning
+
+### Spacy or NLTK?
+Before I started this projet I never have listened about NLP. I decided to use `Spacy` beacuse in NLTK library doesn't exist any lemmatizer in spanish. Concretely I have loaded `'es_dep_news_trf'`.
+
+### Lemmatization of Train-Test dataset
+
+Using the lemmatizer `'es_dep_news_trf'` from `Spacy` (`nlp`), I have lemmatized all tweets from `./0_DATA/train-test_tweets.csv`:
+
+```python
+new_tweets = df_train['Tweet'].map(lambda x: lemmatize_tweet(nlp, x))
+```
+
+```python
+def lemmatize_tweet(nlp, tweet):
+    #This function takes a tweet as a spacy.doc and returs the tweet tokenized
+    #and with all stopwords filtered as a str
+    #Some extra stopwords:
+    delete = {
+        'a', 'of', 'in', 'i', 'to', 'e', 'm', 'and', 'the'
+    }
+    new_tweet = ''
+    
+    #In the next step we are going to remove stop words
+    #and lemmatize words
+    for token in nlp(tweet):
+        if (token.text.isalpha() and not(token.is_stop or token.lemma_ in delete)):#We are going to remove not alphanumeric tokens and stopwords
+            new_tweet += ' ' + token.lemma_
+    
+    #We return tweet tokenized and lemmatized as a tuple: 
+    return 
+```
+
+### Tokenization
+
+Result of most often words (correctly cleaned):
+![WordCloud](https://github.com/rubzip/PoliticalPass/blob/main/wordcloud.png)
+
+### Word Embedding
+
+### Word filtering
+The process was easy, first of all tokenize, filter wordclouds, and lemmatization.
+
+I found some problems with spacy stopwords, resulting the most often words:
+![WordCloud Bad](https://github.com/rubzip/PoliticalPass/blob/main/wordcloud_bad.png)
+I filtered:
+```python
+delete = {
+    'a', 'y', 'o', 'of', 'in', 'i', 'to', 'e', 'm', 'and', 'the'
+}
+
+dictionary_2 = dictionary
+for i in delete:
+    dictionary_2[i] = 0
+```
+
+
+
+### Data label
+I created a dictionary using the 2000 most often words, after that every example is labeled as X: a numpy array of variable length (minimum 3 words), and every element in the array is a number between 0 and 1999. Y is 0. or 1. depending on whether the tweet belongs to a left-wing personality or not. 
 
 
 
@@ -86,38 +147,6 @@ This project uses the following Python libraries
 
 
 
-## Data Cleaning
-
-### Spacy or NLTK?
-Before I started this projet I never have listened about NLP. I decided to use `Spacy` beacuse in NLTK library doesn't exist any lemmatizer in spanish. Concretely I have loaded `'es_dep_news_trf'`.
-
-### Tokenization
-
-Result of most often words (correctly cleaned):
-![WordCloud](https://github.com/rubzip/PoliticalPass/blob/main/wordcloud.png)
-
-### Word Embedding
-
-### Word filtering
-The process was easy, first of all tokenize, filter wordclouds, and lemmatization.
-
-I found some problems with spacy stopwords, resulting the most often words:
-![WordCloud Bad](https://github.com/rubzip/PoliticalPass/blob/main/wordcloud_bad.png)
-I filtered:
-```python
-delete = {
-    'a', 'y', 'o', 'of', 'in', 'i', 'to', 'e', 'm', 'and', 'the'
-}
-
-dictionary_2 = dictionary
-for i in delete:
-    dictionary_2[i] = 0
-```
-
-
-
-### Data label
-I created a dictionary using the 2000 most often words, after that every example is labeled as X: a numpy array of variable length (minimum 3 words), and every element in the array is a number between 0 and 1999. Y is 0. or 1. depending on whether the tweet belongs to a left-wing personality or not. 
 
 ## Model
 The model implemented is a [Recursive Neural Network (RNN)](https://en.wikipedia.org/wiki/Recursive_neural_network).
