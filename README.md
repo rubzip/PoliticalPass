@@ -82,27 +82,8 @@ tokenizer = Tokenizer(num_words=5000, oov_token='<OOV>')
 tokenizer.fit_on_texts(new_tweets)
 ```
 
-Result of most often words (correctly cleaned):
+Result of most often words:
 ![WordCloud](https://github.com/rubzip/PoliticalPass/blob/main/4_IMAGES/wordcloud.png)
-
-### Word Embedding
-
-### Word filtering
-The process was easy, first of all tokenize, filter wordclouds, and lemmatization.
-
-I found some problems with spacy stopwords, resulting the most often words:
-![WordCloud Bad](https://github.com/rubzip/PoliticalPass/blob/main/wordcloud_bad.png)
-I filtered:
-```python
-delete = {
-    'a', 'y', 'o', 'of', 'in', 'i', 'to', 'e', 'm', 'and', 'the'
-}
-
-dictionary_2 = dictionary
-for i in delete:
-    dictionary_2[i] = 0
-```
-
 
 ## 3. Model
 Working... 
