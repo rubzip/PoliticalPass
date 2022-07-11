@@ -53,7 +53,7 @@ I have selected some relevant political profiles in Spain (`datos.csv`), labeled
 First of all I have randomly splitted our twitter accounts in 2 groups train/test - validation (80% - 20%). I have built the data dictionary and trained the model only with the twitter accounts that belong to the first group.
 
 ### Do you feel incomplete the dataset?
-It's really hard to make a dataset that represents correctly the political Spanish spectrum, I would appreciate any sugestions. If you want to help with the dataset, please make a pull request with `datos.csv` updated or fill this Google form().
+It's really hard to make a dataset that represents correctly the political Spanish spectrum, I would appreciate any sugestions. If you want to help with the dataset, please make a pull request with `datos.csv` updated.
 
 ### Possible problems
  * Nowadays left-wing and right-wing concepts are senseless since we have 2 variables in [political spectrum](https://en.wikipedia.org/wiki/The_Political_Compass), but it was the simplest way to label data. 
