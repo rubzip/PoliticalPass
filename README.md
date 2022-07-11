@@ -8,7 +8,7 @@ I have selected some relevant political profiles in Spain (`ALL_twitter_accounts
 ### Twitter Profiles
 
 ### Train/Test/Validation Split
-First of all I have randomly splitted our twitter accounts in 2 groups train/test - validation (80% - 20%). I have built the data dictionary and trained the model only with the twitter accounts that belong to the first group.
+First of all I have randomly splitted our twitter accounts in 2 groups train/test - validation (80% - 20%). The tokenizer data comes from the train/test dataset.
 
 ### Do you feel incomplete the dataset?
 It's really hard to make a dataset that represents correctly the political Spanish spectrum, I would appreciate any sugestions. If you want to help with the dataset, please make a pull request with `datos.csv` updated.
@@ -104,10 +104,8 @@ for i in delete:
 ```
 
 
-
-### Data label
-I created a dictionary using the 2000 most often words, after that every example is labeled as X: a numpy array of variable length (minimum 3 words), and every element in the array is a number between 0 and 1999. Y is 0. or 1. depending on whether the tweet belongs to a left-wing personality or not. 
-
+## 3. Model
+Working... 
 
 
 ## To do list (Only for me)
@@ -150,17 +148,3 @@ This project uses the following Python libraries
 * `es_dep_news_trf` : Spanish transformer pipeline.
 * `wordcloud` : Used to create word clouds from dictionaries.
 * `TensorFlow`
-
-
-
-
-
-## Model
-The model implemented is a [Recursive Neural Network (RNN)](https://en.wikipedia.org/wiki/Recursive_neural_network).
-
-### Data split
-I have applied one_hot_encoding. Using `model_selection` from `sklearn` I have split our 38423 examples as 80% training set and 20% test set.
-We should divide tweets by users.
-
-### Word Embedding Layer
-As we don't have a big ammount of data, we have used a pretrained embedding layer. ... 
