@@ -2,6 +2,28 @@
 
 The goal of this project is to predict if a (Spanish) twitter personality is left-wing or right-wing based on his tweets.
 
+## About data
+I have selected some relevant political profiles in Spain (`ALL_twitter_accounts.csv`), labeled as 0 (rightist) and 1 (leftist), then I have downloaded the N last tweets from them. 
+
+|Nombre          |Ocupación       |Afiliación      |Izda|Twitter        |
+|----------------|----------------|----------------|----|---------------|
+|Unidas Podemos  |Partido Político|Podemos         |1   |@PODEMOS       |
+|PSOE            |Partido Político|PSOE            |1   |@PSOE          |
+|Izquierda Unida |Partido Político|IU              |1   |@IzquierdaUnida|
+|Anticapitalistas|Partido Político|Anticapitalistas|1   |@anticapi      |
+
+### Twitter Profiles
+
+### Train/Test/Validation Split
+First of all I have randomly splitted our twitter accounts in 2 groups train/test - validation (80% - 20%). I have built the data dictionary and trained the model only with the twitter accounts that belong to the first group.
+
+### Do you feel incomplete the dataset?
+It's really hard to make a dataset that represents correctly the political Spanish spectrum, I would appreciate any sugestions. If you want to help with the dataset, please make a pull request with `datos.csv` updated.
+
+### Possible problems
+ * Nowadays left-wing and right-wing concepts are senseless since we have 2 variables (or maybe more) in the [political spectrum](https://en.wikipedia.org/wiki/The_Political_Compass), but it was the simplest way to label data. 
+ * Another problem of data is that we have a large amount of tweets from a small quantity of accounts, this could be problematic (or not).
+
 
 ## To do list (Only for me)
 - [ ] Remove all for loops, instead of that use functional programming.
@@ -44,20 +66,6 @@ This project uses the following Python libraries
 * `wordcloud` : Used to create word clouds from dictionaries.
 * `TensorFlow`
 
-## About data
-I have selected some relevant political profiles in Spain (`datos.csv`), labeled as 0 (rightist) and 1 (leftist), then I have downloaded the N last tweets from them. 
-
-### Twitter Profiles
-
-### Train/Test/Validation Split
-First of all I have randomly splitted our twitter accounts in 2 groups train/test - validation (80% - 20%). I have built the data dictionary and trained the model only with the twitter accounts that belong to the first group.
-
-### Do you feel incomplete the dataset?
-It's really hard to make a dataset that represents correctly the political Spanish spectrum, I would appreciate any sugestions. If you want to help with the dataset, please make a pull request with `datos.csv` updated.
-
-### Possible problems
- * Nowadays left-wing and right-wing concepts are senseless since we have 2 variables (or maybe more) in the [political spectrum](https://en.wikipedia.org/wiki/The_Political_Compass), but it was the simplest way to label data. 
- * Another problem of data is that we have a large amount of tweets from a small quantity of accounts, this could be problematic (or not).
 
 
 ## Mining
