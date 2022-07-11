@@ -63,8 +63,7 @@ def lemmatize_tweet(nlp, tweet):
     }
     new_tweet = ''
     
-    #In the next step we are going to remove stop words
-    #and lemmatize words
+    #In the next step we are going to remove stop words and lemmatize
     for token in nlp(tweet):
         if (token.text.isalpha() and not(token.is_stop or token.lemma_ in delete)):#We are going to remove not alphanumeric tokens and stopwords
             new_tweet += ' ' + token.lemma_
