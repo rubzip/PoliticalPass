@@ -55,7 +55,7 @@ new_tweets = df_train['Tweet'].map(lambda x: lemmatize_tweet(nlp, x))
 
 ```python
 def lemmatize_tweet(nlp, tweet):
-    #This function takes a tweet as a spacy.doc and returs the tweet tokenized
+    #This function takes a tweet as a spacy.doc and returs the tweet lemmatized
     
     #Some extra stopwords:
     delete = {
@@ -74,8 +74,16 @@ def lemmatize_tweet(nlp, tweet):
 
 ### Tokenization
 
+Taking the lemmatized tweets, I have created the tokenizer (5000 words and OutOfVocabularyToken = '<OOV>'):
+
+```python
+# Creation and fitting of the Tokenizer:
+tokenizer = Tokenizer(num_words=5000, oov_token='<OOV>')
+tokenizer.fit_on_texts(new_tweets)
+```
+
 Result of most often words (correctly cleaned):
-![WordCloud](https://github.com/rubzip/PoliticalPass/blob/main/wordcloud.png)
+![WordCloud](https://github.com/rubzip/PoliticalPass/blob/main/4_IMAGES/wordcloud.png)
 
 ### Word Embedding
 
