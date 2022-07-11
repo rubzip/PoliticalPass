@@ -2,7 +2,7 @@
 
 The goal of this project is to predict if a (Spanish) twitter personality is left-wing or right-wing based on his tweets.
 
-## About data
+## 0. About data
 I have selected some relevant political profiles in Spain (`ALL_twitter_accounts.csv`), labeled as 0 (rightist) and 1 (leftist), then I have downloaded the N last tweets from them. 
 
 ### Twitter Profiles
