@@ -69,7 +69,7 @@ def lemmatize_tweet(nlp, tweet):
             new_tweet += ' ' + token.lemma_
     
     #We return tweet tokenized and lemmatized as a tuple: 
-    return 
+    return new_tweet
 ```
 
 ### Tokenization
