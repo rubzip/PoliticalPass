@@ -93,18 +93,11 @@ Working...
 
 
 ## To do list (Only for me)
-- [ ] Remove all for loops, instead of that use functional programming.
 - [ ] **Build the model.** A good idea could train a pre-trained model as [BERT](https://www.tensorflow.org/text/tutorials/fine_tune_bert). 
 - [ ] Increment the dataset.
-- [ ] Divide dataset in Train/Dev/Test. Train and Test must have the same data origin, Test must have different Twitter accounts
 - [ ] Create an embedding projector: https://projector.tensorflow.org/
-- [ ] Organize better the cleaning directory, we have a lot of useless files.
-- [ ] Implement recurrency on data mining.
-- [ ] Optimize lemmatizing.
-- [ ] Build another list of Twitter personalities to test the NN with a different dataset (almost 18 accounts).
 - [ ] Program a web interface that scraps tweets and uses the model to predict the political ideology.
 - [ ] Upload the trained model to hugging face.
-- [ ] Google Form.
 - [ ] Fix `.gitnore` to ignore the `config.py` file. 
 
 The most important files are:
