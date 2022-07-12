@@ -92,6 +92,10 @@ Also it has been lemmatized all tweets from `./0_DATA/val_tweets.csv`, and the r
 Working... 
 The main idea now is to use ULMFIT structure:
 
+https://tfhub.dev/edrone/collections/ulmfit/1
+
+https://tfhub.dev/google/collections/bert/1
+
 https://www.analyticsvidhya.com/blog/2018/11/tutorial-text-classification-ulmfit-fastai-library/?utm_source=blog&utm_medium=top-pretrained-models-nlp-article
 
 https://arxiv.org/abs/1801.06146
