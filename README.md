@@ -114,7 +114,7 @@ The most important files are:
 * `1_MINING/config.py` : Python file that stores API keys.
 * `1_MINING/data_mining.ipynb` : Makes the train-test/val split and downloads the tweets.
 
-* `2_CLEANING/data_cleaning.ipynb` : Tokenizes all tweets and creates the tokenizer.
+* `2_CLEANING/data_cleaning.ipynb` : Lemmatizes all tweets and creates the tokenizer.
 
 * `model.ipynb` : 
 
