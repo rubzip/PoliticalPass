@@ -82,7 +82,7 @@ tokenizer = Tokenizer(num_words=5000, oov_token='<OOV>')
 tokenizer.fit_on_texts(new_tweets)
 ```
 ### Lemmatization of validation dataset
-Also it has been lemmatized all tweets from `./0_DATA/val_tweets.csv`.
+Also it has been lemmatized all tweets from `./0_DATA/val_tweets.csv`, and the result has been stored in `./0_DATA/val_lemma.csv`.
 
 Result of most often words:
 ![WordCloud](https://github.com/rubzip/PoliticalPass/blob/main/4_IMAGES/wordcloud.png)
