@@ -90,7 +90,11 @@ Also it has been lemmatized all tweets from `./0_DATA/val_tweets.csv`, and the r
 
 ## 3. Model
 Working... 
+The main idea now is to use ULMFIT structure:
 
+https://www.analyticsvidhya.com/blog/2018/11/tutorial-text-classification-ulmfit-fastai-library/?utm_source=blog&utm_medium=top-pretrained-models-nlp-article
+
+https://arxiv.org/abs/1801.06146
 
 ## To do list (Only for me)
 - [ ] **Build the model.** A good idea could train a pre-trained model as [BERT](https://www.tensorflow.org/text/tutorials/fine_tune_bert). 
