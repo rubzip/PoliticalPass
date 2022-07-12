@@ -47,7 +47,7 @@ Before I started this projet I never have listened about NLP. I decided to use `
 
 ### Lemmatization of Train-Test dataset
 
-Using the lemmatizer `'es_dep_news_trf'` from `Spacy` (`nlp`), I have lemmatized all tweets from `./0_DATA/train-test_tweets.csv`:
+Using the lemmatizer `'es_dep_news_trf'` from `Spacy` (`nlp`), I have lemmatized all tweets from `./0_DATA/train-test_tweets.csv` and stored in `./0_DATA/train-test_lemma.csv`.
 
 ```python
 new_tweets = df_train['Tweet'].map(lambda x: lemmatize_tweet(nlp, x))
