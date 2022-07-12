@@ -11,7 +11,7 @@ I have selected some relevant political profiles in Spain (`ALL_twitter_accounts
 First of all I have randomly splitted our twitter accounts in 2 groups train/test - validation (80% - 20%). The tokenizer data comes from the train/test dataset.
 
 ### Do you feel incomplete the dataset?
-It's really hard to make a dataset that represents correctly the political Spanish spectrum, I would appreciate any sugestions. If you want to help with the dataset, please make a pull request with `datos.csv` updated.
+It's really hard to make a dataset that represents correctly the political Spanish spectrum, I would appreciate any sugestions. If you want to help with the dataset, please make a pull request with `ALL_twitter_accounts.csv` updated.
 
 ### Possible problems
  * Nowadays left-wing and right-wing concepts are senseless since we have 2 variables (or maybe more) in the [political spectrum](https://en.wikipedia.org/wiki/The_Political_Compass), but it was the simplest way to label data. 
