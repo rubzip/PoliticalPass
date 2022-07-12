@@ -74,13 +74,15 @@ def lemmatize_tweet(nlp, tweet):
 
 ### Tokenization
 
-Taking the lemmatized tweets, I have created the tokenizer (5000 words):
+Taking the lemmatized tweets (train-test), I have created the tokenizer (5000 words):
 
 ```python
 # Creation and fitting of the Tokenizer:
 tokenizer = Tokenizer(num_words=5000, oov_token='<OOV>')
 tokenizer.fit_on_texts(new_tweets)
 ```
+### Lemmatization of validation dataset
+Also it has been lemmatized all tweets from `./0_DATA/val_tweets.csv`.
 
 Result of most often words:
 ![WordCloud](https://github.com/rubzip/PoliticalPass/blob/main/4_IMAGES/wordcloud.png)
