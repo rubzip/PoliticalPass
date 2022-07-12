@@ -108,17 +108,12 @@ Working...
 
 The most important files are:
 
-* `config.py` : Python file that stores API keys.
+* `./ALL_twitter_accounts.csv` : Info about all users analyzed.
 
-* `datos.csv` : Info about all users analyzed.
+* `1_MINING/config.py` : Python file that stores API keys.
+* `1_MINING/data_mining.ipynb` : Makes the train-test/val split and downloads the tweets.
 
-* `data_mining.ipynb` : Downloads the `number_tweets` last tweets from each user. Tweets are stored in `raw_tweets.csv`.  
-
-* `data_cleaning.ipynb` : Tokenizes and cleans stopwords.
-
-* `create_dictionary.ipynb` : Creates a dictionary formed by the `n_max` most frequent words.
-
-* `transform_data.ipynb` : It takes the tokenized tweets from `data_cleaning.ipynb` and labels data applying the dictionary `dictionary.json`. After running this notebook, we have correctly formatted our data as `X` (numpy array, variable lengths) and `y` (0 or 1). 
+* `2_CLEANING/data_cleaning.ipynb` : Tokenizes all tweets and creates the tokenizer.
 
 * `model.ipynb` : 
 
