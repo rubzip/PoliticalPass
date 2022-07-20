@@ -19,7 +19,7 @@ It's really hard to make a dataset that represents correctly the political Spani
 
 
 ## 1. Mining
-Using `Tweepy` and Twitter's API (`config.py`), I have downloaded the last 300 tweets from every user:
+Using `Tweepy` and Twitter's API (`1_MINING/config.py`), I have downloaded the last 300 tweets from every user:
 
 ```python
 def import_tweets(account, api, number_tweets=300):
