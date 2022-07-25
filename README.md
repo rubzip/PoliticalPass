@@ -103,7 +103,7 @@ https://arxiv.org/abs/1801.06146
 ## To do list (Only for me)
 - [ ] **Build the model.** A good idea could train a pre-trained model as [BERT](https://www.tensorflow.org/text/tutorials/fine_tune_bert). 
 - [ ] Increment the dataset.
-- [ ] Document functions.
+- [ ] Create the function's documentation.
 - [ ] Create an embedding projector: https://projector.tensorflow.org/
 - [ ] Program a web interface that scraps tweets and uses the model to predict the political ideology.
 - [ ] Upload the trained model to hugging face.
